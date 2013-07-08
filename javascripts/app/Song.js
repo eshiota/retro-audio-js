@@ -13,6 +13,7 @@ Module("App.Song", function (Song) {
     this.beatDuration = signature[1];
     this.tracks = [];
     this.currentCycle = 0;
+    this.playing = false;
 
     this.cycleDuration = Song.calculateCycle(this.tempo);
 
@@ -38,12 +39,28 @@ Module("App.Song", function (Song) {
   };
 
   // Starts the cycle that plays the note
-  Song.fn.start = function () {
+  Song.fn.play = function (cycle) {
+    if (this.playing) { return; }
+
     console.log("Now playing " + this.title);
 
-    this.currentCycle = 0;
+    if (cycle) {
+      this.currentCycle = cycle;
+    }
+
     this.playing = true;
     this._renderCycle();
+  };
+
+  // Stops the cycle rendering
+  Song.fn.pause = function () {
+    this.playing = false;
+  };
+
+  // Stops the cycle rendering and reset position to zero
+  Song.fn.stop = function () {
+    this.playing = false;
+    this.currentCycle = 0;
   };
 
   // Loops the animation, calling itself according to the fps

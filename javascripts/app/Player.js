@@ -8,6 +8,7 @@ Module("App.Player", function (Player) {
     // Holds the universal audio context
     // TODO: adapter for cross-browser implementation
     this.context = new webkitAudioContext();
+    this.isPlaying = false;
   };
 
   // Loads a song from an URL
@@ -29,19 +30,28 @@ Module("App.Player", function (Player) {
     this.song = new App.Song(song, this.context);
   };
 
-  // Plays the song from the current position
-  Player.fn.play = function () {
+  // Plays the song from the current position.
+  // If a cycle is given, plays the song starting on that cycle.
+  Player.fn.play = function (cycle) {
     if (!this.song) {
       throw "You have to load a song first.";
     }
 
-    this.song.start();
+    if (this.isPlaying) { return; }
+
+    this.song.play(cycle);
   };
 
   // Stops the song and resets the position
-  Player.fn.stop = function () {};
+  Player.fn.stop = function () {
+    this.song.stop();
+    this.isPlaying = false;
+  };
 
   // Stops the song and stores the position
-  Player.fn.pause = function () {};
+  Player.fn.pause = function () {
+    this.song.pause();
+    this.isPlaying = false;
+  };
 
 });
