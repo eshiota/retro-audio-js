@@ -1,0 +1,17 @@
+/*******************************************************************************
+*
+*  Layout » Main
+*
+*  All base styles for the layout, including grid, are defined here.
+*
+*******************************************************************************/
+
+body {
+  background-color: #fefefa;
+}
+
+#container {
+  width: perc(800px, $CONTEXT_SITE_WIDTH);
+  margin: 0 auto;
+  padding-top: em(64px, $CONTEXT_FONT_SIZE);
+}

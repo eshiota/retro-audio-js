@@ -1,0 +1,58 @@
+/*******************************************************************************
+*
+*  Core » Basic
+*
+*  Contains all main base styles and resets.
+*
+*******************************************************************************/
+
+html {
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body,
+select { color: $TEXT_COLOR; }
+
+
+/*********************************************************************
+*  =Links
+*********************************************************************/
+
+a {
+  @include colorful-links($LINK_COLOR);
+  text-decoration: underline;
+}
+
+a:focus { outline: thin dotted; }
+
+
+/*********************************************************************
+*  =Selection
+*********************************************************************/
+
+::-moz-selection { background: $SELECTION_BACKGROUND; color: $SELECTION_COLOR; text-shadow: none; }
+::selection { background: $SELECTION_BACKGROUND; color: $SELECTION_COLOR; text-shadow: none; }
+
+
+/*********************************************************************
+*  =Media
+*********************************************************************/
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/* Correct overflow not hidden in IE9 */
+svg:not(:root) { overflow: hidden; }
+
+
+/*********************************************************************
+*  =Navigation
+*********************************************************************/
+
+nav ul,
+nav ol { list-style: none; margin: 0; }

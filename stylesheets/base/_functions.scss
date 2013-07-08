@@ -1,0 +1,39 @@
+/*********************************************************************
+*
+*  Base » Functions
+*
+*  Custom functions used by the application.
+*
+*********************************************************************/
+
+// Returns unitless number
+@function remove-unit($number) {
+  $unit: unit($number);
+  $one: 1;
+
+  @if $unit == "px" { $one: 1px; }
+  @if $unit == "em" { $one: 1em; }
+  @if $unit == "%"  { $one: 1%;  }
+
+  @return $number / $one;
+}
+
+// Returns flexible value using `target ÷ context` formula.
+// Returns `em` by default, accepts `%` as format.
+@function flex($target, $context: 14, $unit: "em") {
+  $size: remove-unit($target) / remove-unit($context);
+
+  @if $unit == "" { @return $size; }
+  @if $unit == "em" { @return #{$size}em; }
+  @if $unit == "%" { @return percentage($size); }
+}
+
+// Alias to `flex` function, using `%` as format.
+@function perc($target, $context) {
+  @return flex($target, $context, "%");
+}
+
+// Alias to `flex` function, using `em` as format.
+@function em($target, $context) {
+  @return flex($target, $context, "em");
+}

@@ -1,0 +1,121 @@
+/*******************************************************************************
+*
+*  Core » Typography
+*
+*  Contains all typographical elements styles.
+*
+*******************************************************************************/
+
+/* 16px / 16px - 100% */
+body {
+  font: normal normal 100%/1.5 sans-serif;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ""; content: none; }
+
+abbr { text-transform: lowercase; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+dfn { font-style: italic; }
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+del { text-decoration: line-through; }
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol, dd {
+  margin-bottom: 1.5em;
+  margin-left: 1.5em;
+}
+
+ol { list-style: inside decimal; }
+ul { list-style: inside disc; }
+
+ul ul,
+ul ol,
+ol ul,
+ol ol { margin-bottom: 0; }
+
+ul li,
+ol li { margin-bottom: 0.5em; }
+
+ul li li,
+ol li li { margin-bottom: 0; }
+
+p { margin-bottom: 1.5em; }
+
+pre {
+  padding: 1em;
+  margin: 0 0 1.5em;
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  word-wrap: break-word; /* IE */
+  background: #fefefa;
+  border: 1px solid #ececec;
+}
+
+blockquote {
+  padding-left: 1.5em;
+  border-left: 3px solid $TEXT_COLOR;
+  margin-left: 4.5em;
+  font-style: italic;
+  margin-bottom: 1.5em;
+}
+
+
+/*********************************************************************
+*  =Headers
+*********************************************************************/
+
+h1, h2, h3, h4 {
+  font-family: "Museo Sans", "Gill Sans", sans-serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: em(56px, $CONTEXT_FONT_SIZE);
+  line-height: em(56px, 56px);
+  margin-bottom: em(48px, 56px);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: em(44px, $CONTEXT_FONT_SIZE);
+  line-height: em(44px, 44px);
+  margin-bottom: em(32px, 44px);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h3 {
+  border-bottom: 1px solid adjust-color($TEXT-COLOR, $lightness: +20%);
+  font-size: em(32px, $CONTEXT_FONT_SIZE);
+  line-height: em(32px, 32px);
+  margin-bottom: em(32px, 32px);
+  padding-bottom: em(8px, 32px);
+}
+
+h4 {
+  font-size: em(24px, $CONTEXT_FONT_SIZE);
+  line-height: em(24px, 24px);
+  margin-bottom: em(24px, 24px);
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 1em;
+}

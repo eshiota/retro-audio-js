@@ -1,0 +1,60 @@
+/*********************************************************************
+*
+*  Base » Mixins
+*
+*  All general purpose mixins are defined here.
+*
+*********************************************************************/
+
+/*********************************************************************
+*  =Clearfix
+*********************************************************************/
+
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  zoom: 1;
+}
+
+
+/*********************************************************************
+*  =Image replacement
+*
+*  `display` property should be declare on the element, not here
+*  on the mixin. Element must have fixed width and height.
+*********************************************************************/
+
+@mixin img_replacement {
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+/*********************************************************************
+*  =Colorful links
+*
+*  Provide a set of colors for normal, :visited, :hover, and :active
+*  links, based on a base color. Should be used like this:
+*
+*  .my-class a {
+*    @include colorful-links(#abcdef);
+*  }
+*********************************************************************/
+
+@mixin colorful-links($color) {
+  @include transition(color, .1s, ease-out);
+
+  color: $color;
+
+  &:visited { color: $color; }
+  &:hover   { color: adjust-color($color, $lightness: +10%); }
+  &:active  { color: adjust-color($color, $lightness: -5%); }
+}

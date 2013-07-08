@@ -1,0 +1,410 @@
+@charset "UTF-8";
+/*********************************************************************
+*
+*  Base » Functions
+*
+*  Custom functions used by the application.
+*
+*********************************************************************/
+/*********************************************************************
+*
+*  Base » Variables
+*
+*  All constants that will be used though the styles must be
+*  defined here.
+*
+*********************************************************************/
+/*********************************************************************
+*
+*  Base » Mixins
+*
+*  All general purpose mixins are defined here.
+*
+*********************************************************************/
+/*********************************************************************
+*  =Clearfix
+*********************************************************************/
+/*********************************************************************
+*  =Image replacement
+*
+*  `display` property should be declare on the element, not here
+*  on the mixin. Element must have fixed width and height.
+*********************************************************************/
+/*********************************************************************
+*  =Colorful links
+*
+*  Provide a set of colors for normal, :visited, :hover, and :active
+*  links, based on a base color. Should be used like this:
+*
+*  .my-class a {
+*    @include colorful-links(#abcdef);
+*  }
+*********************************************************************/
+/*******************************************************************************
+*
+*  Core » Reset
+*
+*  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+*  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
+*  html5doctor.com/html-5-reset-stylesheet/
+*
+*******************************************************************************/
+/* line 22, core/_reset.scss */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li, a,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* line 24, core/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 25, core/_reset.scss */
+audio:not([controls]) {
+  display: none;
+}
+
+/* line 26, core/_reset.scss */
+[hidden] {
+  display: none;
+}
+
+/*******************************************************************************
+*
+*  Core » Typography
+*
+*  Contains all typographical elements styles.
+*
+*******************************************************************************/
+/* 16px / 16px - 100% */
+/* line 10, core/_typography.scss */
+body {
+  font: normal normal 100%/1.5 sans-serif;
+}
+
+/* line 14, core/_typography.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 17, core/_typography.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 19, core/_typography.scss */
+abbr {
+  text-transform: lowercase;
+}
+
+/* line 21, core/_typography.scss */
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+/* line 23, core/_typography.scss */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+/* line 25, core/_typography.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 26, core/_typography.scss */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 27, core/_typography.scss */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 28, core/_typography.scss */
+del {
+  text-decoration: line-through;
+}
+
+/* line 29, core/_typography.scss */
+small {
+  font-size: 85%;
+}
+
+/* line 30, core/_typography.scss */
+strong, th {
+  font-weight: bold;
+}
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+/* line 33, core/_typography.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 34, core/_typography.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 35, core/_typography.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 37, core/_typography.scss */
+ul, ol, dd {
+  margin-bottom: 1.5em;
+  margin-left: 1.5em;
+}
+
+/* line 42, core/_typography.scss */
+ol {
+  list-style: inside decimal;
+}
+
+/* line 43, core/_typography.scss */
+ul {
+  list-style: inside disc;
+}
+
+/* line 48, core/_typography.scss */
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-bottom: 0;
+}
+
+/* line 51, core/_typography.scss */
+ul li,
+ol li {
+  margin-bottom: 0.5em;
+}
+
+/* line 54, core/_typography.scss */
+ul li li,
+ol li li {
+  margin-bottom: 0;
+}
+
+/* line 56, core/_typography.scss */
+p {
+  margin-bottom: 1.5em;
+}
+
+/* line 58, core/_typography.scss */
+pre {
+  padding: 1em;
+  margin: 0 0 1.5em;
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  word-wrap: break-word;
+  /* IE */
+  background: #fefefa;
+  border: 1px solid #ececec;
+}
+
+/* line 68, core/_typography.scss */
+blockquote {
+  padding-left: 1.5em;
+  border-left: 3px solid #555555;
+  margin-left: 4.5em;
+  font-style: italic;
+  margin-bottom: 1.5em;
+}
+
+/*********************************************************************
+*  =Headers
+*********************************************************************/
+/* line 81, core/_typography.scss */
+h1, h2, h3, h4 {
+  font-family: "Museo Sans", "Gill Sans", sans-serif;
+  font-weight: 500;
+}
+
+/* line 86, core/_typography.scss */
+h1 {
+  font-size: 3.5em;
+  line-height: 1em;
+  margin-bottom: 0.85714em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 94, core/_typography.scss */
+h2 {
+  font-size: 2.75em;
+  line-height: 1em;
+  margin-bottom: 0.72727em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 102, core/_typography.scss */
+h3 {
+  border-bottom: 1px solid #888888;
+  font-size: 2em;
+  line-height: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.25em;
+}
+
+/* line 110, core/_typography.scss */
+h4 {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+
+/* line 116, core/_typography.scss */
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+
+/*******************************************************************************
+*
+*  Core » Basic
+*
+*  Contains all main base styles and resets.
+*
+*******************************************************************************/
+/* line 9, core/_basic.scss */
+html {
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 16, core/_basic.scss */
+body,
+select {
+  color: #555555;
+}
+
+/*********************************************************************
+*  =Links
+*********************************************************************/
+/* line 23, core/_basic.scss */
+a {
+  -webkit-transition: color, 0.1s, ease-out;
+  -moz-transition: color, 0.1s, ease-out;
+  -o-transition: color, 0.1s, ease-out;
+  transition: color, 0.1s, ease-out;
+  color: #2d96d1;
+  text-decoration: underline;
+}
+/* line 57, base/_mixins.scss */
+a:visited {
+  color: #2d96d1;
+}
+/* line 58, base/_mixins.scss */
+a:hover {
+  color: #56abdb;
+}
+/* line 59, base/_mixins.scss */
+a:active {
+  color: #2887bc;
+}
+
+/* line 28, core/_basic.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/*********************************************************************
+*  =Selection
+*********************************************************************/
+/* line 35, core/_basic.scss */
+::-moz-selection {
+  background: #4cabdb;
+  color: white;
+  text-shadow: none;
+}
+
+/* line 36, core/_basic.scss */
+::selection {
+  background: #4cabdb;
+  color: white;
+  text-shadow: none;
+}
+
+/*********************************************************************
+*  =Media
+*********************************************************************/
+/* line 43, core/_basic.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/* Correct overflow not hidden in IE9 */
+/* line 50, core/_basic.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/*********************************************************************
+*  =Navigation
+*********************************************************************/
+/* line 58, core/_basic.scss */
+nav ul,
+nav ol {
+  list-style: none;
+  margin: 0;
+}
+
+/*******************************************************************************
+*
+*  Layout » Main
+*
+*  All base styles for the layout, including grid, are defined here.
+*
+*******************************************************************************/
+/* line 9, layout/_main.scss */
+body {
+  background-color: #fefefa;
+}
+
+/* line 13, layout/_main.scss */
+#container {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 4em;
+}
