@@ -8,7 +8,10 @@ Module("App.Player", function (Player) {
     // Holds the universal audio context
     // TODO: adapter for cross-browser implementation
     this.context = new webkitAudioContext();
+    this.controls = new App.Controls();
     this.isPlaying = false;
+
+    this._registerInterests();
   };
 
   // Loads a song from an URL
@@ -27,31 +30,47 @@ Module("App.Player", function (Player) {
 
   // Loads a song into the player
   Player.fn.load = function (song) {
+    if (this.song) { this.stop(); }
+
     this.song = new App.Song(song, this.context);
+    this.controls.updateSongInfo(song.title);
   };
 
   // Plays the song from the current position.
   // If a cycle is given, plays the song starting on that cycle.
   Player.fn.play = function (cycle) {
-    if (!this.song) {
-      throw "You have to load a song first.";
-    }
-
+    if (!this.song) { return; }
     if (this.isPlaying) { return; }
 
     this.song.play(cycle);
+    this.isPlaying = true;
   };
 
   // Stops the song and resets the position
   Player.fn.stop = function () {
+    if (!this.song) { return; }
+
     this.song.stop();
     this.isPlaying = false;
   };
 
   // Stops the song and stores the position
   Player.fn.pause = function () {
+    if (!this.song) { return; }
+    if (!this.isPlaying) { return; }
+
     this.song.pause();
     this.isPlaying = false;
+  };
+
+  // Private
+  // -------
+
+  Player.fn._registerInterests = function () {
+    this.controls.on("load-click", this.loadUrl, this);
+    this.controls.on("stop-click", this.stop, this);
+    this.controls.on("pause-click", this.pause, this);
+    this.controls.on("play-click", this.play, this);
   };
 
 });

@@ -42,8 +42,6 @@ Module("App.Song", function (Song) {
   Song.fn.play = function (cycle) {
     if (this.playing) { return; }
 
-    console.log("Now playing " + this.title);
-
     if (cycle) {
       this.currentCycle = cycle;
     }
