@@ -93,7 +93,6 @@ Module("App.Note", function (Note) {
 
     // If is a dotted note, give it an indication
     if (value.indexOf("D", 1) !== -1) {
-      console.log("foo");
       this.isDotted = true;
     }
 
