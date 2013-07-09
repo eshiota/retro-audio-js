@@ -47,6 +47,10 @@ Module("App.Track", function (Track) {
         elementCycles = Math.floor(64 / element.value);
       }
 
+      if (element.isDotted) {
+        elementCycles = elementCycles + Math.floor((64 / element.value) / 2);
+      }
+
       currentCycle = currentCycle + elementCycles;
     }
     return parsedTrack;
@@ -80,6 +84,10 @@ Module("App.Track", function (Track) {
         duration = Math.ceil(((64 / (note.value / 2)) * cycleDuration) / note.tupletValue);
       } else {
         duration = ((64 / note.value) * cycleDuration);
+      }
+
+      if (note.isDotted) {
+        duration = duration + (duration / 2);
       }
 
       // This is actually a chord

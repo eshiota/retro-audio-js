@@ -77,21 +77,27 @@ Module("App.Note", function (Note) {
   //   (semibreve, which has four 'beats' on a 4/4 bar).
   //   If the value is 4, for example, its value is 1/4 of a semibreve,
   //   which is a quarter note.
-  // - TODO: A Tuplet (http://en.wikipedia.org/wiki/Tuplet). The notation is
+  // - A dotted note, which has the value of the fraction, plus half of it.
+  // - A Tuplet (http://en.wikipedia.org/wiki/Tuplet). The notation is
   //   the value of a note, followed by "T", and the number of subdivisions.
   //   For example, "8T3" means that three 1/8 (minim) notes have the same
   //   value as a 1/4 (crochet) note.
   Note.fn.normalizeValue = function (value) {
     var parts = value.split("T");
 
-    // If there's only the pure value part, return it as an integer
-    if (parts.length === 1) {
-      return parseInt(value, 10);
+    // If is a tuplet, make it so
+    if (parts.length > 1) {
+      this.belongsToTuplet = true;
+      this.tupletValue = parseInt(parts[1], 10);
     }
 
-    this.belongsToTuplet = true;
-    this.tupletValue = parseInt(parts[1], 10);
+    // If is a dotted note, give it an indication
+    if (value.indexOf("D", 1) !== -1) {
+      console.log("foo");
+      this.isDotted = true;
+    }
 
+    // If there's only the pure value part, return it as an integer
     return parseInt(parts[0], 10);
   };
 
