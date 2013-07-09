@@ -4,7 +4,7 @@
   "time_signature" : "4/4",
   "score" : [
     {
-      "instrument" : "oscillator-sine",
+      "instrument" : "oscillator-square",
       "volume" : 0.5,
       "sheet" : [
         ["E5.8", "F#4.8"], ["E5.8", "F#4.8"], "-.8" , ["E5.8", "F#4.8"], "-.8" , ["C5.8", "F#4.8"], ["E5.8", "F#4.8"], "-.8", ["G5.8", "B4.8", "G4.8"], "-.8", "-.4"  , "G4.8", "-.8", "-.4",
@@ -64,7 +64,7 @@
     },
     {
       "volume" : 0.5,
-      "instrument" : "oscillator-sine",
+      "instrument" : "oscillator-square",
       "sheet" : [
         "D3.8", "D3.8", "-.8", "D3.8", "-.8", "D3.8", "D3.8", "-.8", "G3.8", "-.8", "-.4", "G3.8", "-.8", "-.4",
 
