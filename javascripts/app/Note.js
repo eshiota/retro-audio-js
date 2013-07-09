@@ -29,7 +29,7 @@ Module("App.Note", function (Note) {
     if (data.length !== 2) { throw "Invalid note/value format :" + notation; }
 
     this.key = this.normalizeKey(data[0]);
-    this.value = this.normalizeValue(data[1]);
+    this.value = this.normalizeValue(data.slice(1).join(""));
 
     if (data[0] === "-") {
       this.isPause = true;
@@ -82,7 +82,7 @@ Module("App.Note", function (Note) {
   //   For example, "8T3" means that three 1/8 (minim) notes have the same
   //   value as a 1/4 (crochet) note.
   Note.fn.normalizeValue = function (value) {
-    var parts = value.split("");
+    var parts = value.split("T");
 
     // If there's only the pure value part, return it as an integer
     if (parts.length === 1) {
@@ -90,7 +90,7 @@ Module("App.Note", function (Note) {
     }
 
     this.belongsToTuplet = true;
-    this.tupletValue = parseInt(parts[2], 10);
+    this.tupletValue = parseInt(parts[1], 10);
 
     return parseInt(parts[0], 10);
   };
