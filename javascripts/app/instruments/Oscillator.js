@@ -13,7 +13,7 @@ Module("App.instruments.Oscillator", function (Oscillator) {
   // https://gist.github.com/stuartmemo/3766449
   // Takes string of Note + Octave
   // Example:
-  // var frequency = Instrument.getFrequency('C3');
+  // var frequency = Oscillator.getFrequency('C3');
   Oscillator.getFrequency = function (note) {
     var notes = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]
       , octave
