@@ -20,7 +20,7 @@
 
 // Returns flexible value using `target ÷ context` formula.
 // Returns `em` by default, accepts `%` as format.
-@function flex($target, $context: 14, $unit: "em") {
+@function flex($target, $context: $CONTEXT_FONT_SIZE, $unit: "em") {
   $size: remove-unit($target) / remove-unit($context);
 
   @if $unit == "" { @return $size; }
@@ -29,11 +29,11 @@
 }
 
 // Alias to `flex` function, using `%` as format.
-@function perc($target, $context) {
+@function perc($target, $context: $CONTEXT_FONT_SIZE) {
   @return flex($target, $context, "%");
 }
 
 // Alias to `flex` function, using `em` as format.
-@function em($target, $context) {
+@function em($target, $context: $CONTEXT_FONT_SIZE) {
   @return flex($target, $context, "em");
 }

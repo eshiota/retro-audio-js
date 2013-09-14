@@ -20,6 +20,18 @@ Module("App.Controls", function (Controls) {
     this.songInfo.querySelector("[data-current-song]").textContent = "Current song: " + title;
   };
 
+  Controls.fn.switchToPlayStatus = function () {
+    this.playbackControls.querySelector("[data-play]").style.display = "none";
+    this.playbackControls.querySelector("[data-pause]").style.display = "block";
+    this.playbackControls.querySelector("[data-stop]").style.display = "block";
+  };
+
+  Controls.fn.switchToStopStatus = function () {
+    this.playbackControls.querySelector("[data-play]").style.display = "block";
+    this.playbackControls.querySelector("[data-pause]").style.display = "none";
+    this.playbackControls.querySelector("[data-stop]").style.display = "block";
+  };
+
   // Private
   // -------
 
@@ -34,20 +46,24 @@ Module("App.Controls", function (Controls) {
   // ---------
 
   Controls.fn._onPlayClick = function (event) {
+    this.switchToPlayStatus();
     this.trigger("play-click");
   };
 
   Controls.fn._onStopClick = function (event) {
+    this.switchToStopStatus();
     this.trigger("stop-click");
   };
 
   Controls.fn._onPauseClick = function (event) {
+    this.switchToStopStatus();
     this.trigger("pause-click");
   };
 
   Controls.fn._onLoadClick = function (event) {
     var song = this.songControls.querySelector("[data-song-select]").value;
 
+    this.switchToStopStatus();
     this.trigger("load-click", song);
   };
 

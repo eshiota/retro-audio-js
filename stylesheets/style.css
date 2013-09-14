@@ -40,6 +40,11 @@
 *    @include colorful-links(#abcdef);
 *  }
 *********************************************************************/
+@font-face {
+  font-family: "Silkscreen";
+  src: url('../fonts/slkscr-webfont.woff') format('woff'), url('../fonts/slkscr-webfont.ttf') format('truetype');
+}
+
 /*******************************************************************************
 *
 *  Core » Reset
@@ -399,12 +404,164 @@ nav ol {
 *******************************************************************************/
 /* line 9, layout/_main.scss */
 body {
-  background-color: #fefefa;
+  background-color: #000;
+  color: #fff;
 }
 
-/* line 13, layout/_main.scss */
+/* line 14, layout/_main.scss */
 #container {
-  width: 80%;
+  width: 30.25em;
   margin: 0 auto;
   padding-top: 4em;
+  overflow: auto;
+}
+
+/* line 21, layout/_main.scss */
+.bt {
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1em;
+  display: block;
+  background-color: #0078f8;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 0;
+  border: 0;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+}
+
+/* line 36, layout/_main.scss */
+.play-bt {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNDhweCIgaGVpZ2h0PSI0OHB4IiB2aWV3Qm94PSIwIDAgNDggNDgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ4IDQ4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iMTMuMDg3LDExLjg5MyAxNi4zMTYsMTEuODkzIDE2LjMxNiwxMy41MDggMTkuNTQ0LDEzLjUwOCAxOS41NDQsMTUuMTIgMjIuNzcyLDE1LjEyIDIyLjc3MiwxNi43MzggDQoJMjUuOTYzLDE2LjczOCAyNS45NjMsMTguMzUzIDI5LjE5MSwxOC4zNTMgMjkuMTkxLDE5Ljk2NyAzMi40MiwxOS45NjcgMzIuNDIsMjEuNTgzIDM1LjY0NiwyMS41ODMgMzUuNjQ2LDIzLjE4OCAzOC45MTMsMjMuMTg4IA0KCTM4LjkxMywyNC44MjEgMzUuNjQ2LDI0LjgyMSAzNS42NDYsMjYuNDIyIDMyLjQyLDI2LjQyMiAzMi40MiwyOC4wMzYgMjkuMTkxLDI4LjAzNiAyOS4xOTEsMjkuNjUxIDI1Ljk2MywyOS42NTEgMjUuOTYzLDMxLjI2NyANCgkyMi43NzIsMzEuMjY3IDIyLjc3MiwzMi44ODEgMTkuNTQ0LDMyLjg4MSAxOS41NDQsMzQuNSAxNi4zMTYsMzQuNDk2IDE2LjMxNiwzNi4xMTUgMTMuMDg3LDM2LjExNSAiLz4NCjwvc3ZnPg0K');
+}
+
+/* line 40, layout/_main.scss */
+.pause-bt {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNDhweCIgaGVpZ2h0PSI0OHB4IiB2aWV3Qm94PSIwIDAgNDggNDgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ4IDQ4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxyZWN0IHg9IjExLjA4NiIgeT0iMTEuODkzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iOS42ODUiIGhlaWdodD0iMjQuMjIyIi8+DQo8cmVjdCB4PSIyNy4yMjgiIHk9IjExLjg5MyIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjkuNjg2IiBoZWlnaHQ9IjI0LjIyMiIvPg0KPC9zdmc+DQo=');
+}
+
+/* line 44, layout/_main.scss */
+.stop-bt {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNDhweCIgaGVpZ2h0PSI0OHB4IiB2aWV3Qm94PSIwIDAgNDggNDgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ4IDQ4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxyZWN0IHg9IjEyLjk3OCIgeT0iMTMuNjY3IiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMjIuMDQzIiBoZWlnaHQ9IjIwLjY3NSIvPg0KPC9zdmc+DQo=');
+}
+
+/* line 50, layout/_main.scss */
+.play-bt,
+.pause-bt,
+.stop-bt {
+  display: none;
+}
+
+/* line 52, layout/_main.scss */
+.load-bt {
+  text-indent: 0;
+  width: auto;
+  color: #fff;
+  font-family: Silkscreen, sans-serif;
+  font-size: 1.5em;
+  height: 2em;
+  line-height: 2em;
+  width: 4em;
+  text-align: center;
+}
+
+/* line 64, layout/_main.scss */
+.title {
+  font-family: Silkscreen, sans-serif;
+  font-size: 4.5em;
+  margin-bottom: 0;
+}
+
+/* line 70, layout/_main.scss */
+.subtitle {
+  font-family: Silkscreen, sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* line 76, layout/_main.scss */
+.player-controls {
+  box-sizing: border-box;
+  background: #bcbcbc;
+  height: 7.5em;
+  position: relative;
+}
+
+/*********************************************************************
+*  =Song controls
+*********************************************************************/
+/* line 87, layout/_main.scss */
+.song-controls {
+  overflow: hidden;
+  width: 19.125em;
+  height: 3em;
+  position: absolute;
+  left: 1em;
+  top: 1em;
+}
+
+/* line 96, layout/_main.scss */
+.song-controls select {
+  font-size: 1.125em;
+  width: 11.11111em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 104, layout/_main.scss */
+.song-controls .load-bt {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/*********************************************************************
+*  =Playback controls
+*********************************************************************/
+/* line 115, layout/_main.scss */
+.playback-controls {
+  overflow: hidden;
+  width: 6.875em;
+  height: 3em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+
+/* line 125, layout/_main.scss */
+.playback-controls .play-bt,
+.playback-controls .pause-bt {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 131, layout/_main.scss */
+.playback-controls .stop-bt {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/*********************************************************************
+*  =Song info
+*********************************************************************/
+/* line 141, layout/_main.scss */
+.song-info {
+  color: #000;
+  position: absolute;
+  left: 1em;
+  top: 5em;
+}
+
+/* line 148, layout/_main.scss */
+.current-song {
+  margin-bottom: 0;
+  font-family: Silkscreen, sans-serif;
+  font-size: 1em;
 }
