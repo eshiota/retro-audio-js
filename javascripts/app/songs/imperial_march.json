@@ -1,0 +1,15 @@
+{
+  "title" : "Imperial March",
+  "tempo" : 120,
+  "time_signature" : "4/4",
+  "score" : [
+    {
+      "instrument" : "oscillator-square",
+      "volume" : 0.5,
+      "sheet" : [
+        "G.8D", "-.16", "G.8D", "-.16", "G.8D", "-.16", "Eb.8D", "Bb.16",
+        "G.8D", "-.16", "Eb.8D", "Bb.16", "G.4", "-.4"
+      ]
+    }
+  ]
+}
