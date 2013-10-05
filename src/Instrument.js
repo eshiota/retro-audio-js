@@ -19,11 +19,11 @@ Module("App.Instrument", function (Instrument) {
     this.masterVolume.connect(this.context.destination);
 
     if (instrument === "oscillator-sine") {
-      this.instrumentVariation = new App.instruments.Oscillator(this.context, this.masterVolume, 0);
+      this.instrumentVariation = new App.instruments.Oscillator(this.context, this.masterVolume, "sine");
     }
 
     if (instrument === "oscillator-square") {
-      this.instrumentVariation = new App.instruments.Oscillator(this.context, this.masterVolume, 1);
+      this.instrumentVariation = new App.instruments.Oscillator(this.context, this.masterVolume, "square");
     }
   };
 
