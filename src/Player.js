@@ -6,8 +6,9 @@ Module("App.Player", function (Player) {
 
   Player.fn.initialize = function () {
     // Holds the universal audio context
-    // TODO: adapter for cross-browser implementation
-    this.context = new webkitAudioContext();
+    var AudioContext = window.AudioContext || window.webkitAudioContext;
+    this.context = new AudioContext();
+
     this.controls = new App.Controls();
     this.isPlaying = false;
 

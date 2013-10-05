@@ -14,7 +14,7 @@ Module("App.Instrument", function (Instrument) {
 
   // Inits the instrument instance.
   Instrument.fn.init = function (instrument) {
-    this.masterVolume = this.context.createGainNode();
+    this.masterVolume = this.context.createGain() || this.context.createGainNode();
     this.masterVolume.gain.value = this.volume;
     this.masterVolume.connect(this.context.destination);
 
