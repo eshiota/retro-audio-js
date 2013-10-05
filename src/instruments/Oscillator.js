@@ -5,9 +5,17 @@
 Module("App.instruments.Oscillator", function (Oscillator) {
 
   Oscillator.fn.initialize = function (audioContext, node, type) {
-    this.type = type || "sine";
+    this.type = Oscillator.getWaveType(type || "sine", audioContext);
     this.context = audioContext;
     this.node = node;
+  };
+
+  // Returns the wave type based on the available API
+  Oscillator.getWaveType = function (type, context) {
+    // Creates an oscillator just to get the wave type on older implementations
+    var o = context.createOscillator();
+
+    return o[type.toUpperCase()] || type;
   };
 
   // https://gist.github.com/stuartmemo/3766449
@@ -41,13 +49,15 @@ Module("App.instruments.Oscillator", function (Oscillator) {
   Oscillator.fn.play = function (note, duration) {
     var frequency = Oscillator.getFrequency(note.key)
       , oscillator = this.context.createOscillator()
+      , startMethod = oscillator.start || oscillator.noteOn
+      , stopMethod = oscillator.stop || oscillator.noteOff
     ;
 
     oscillator.type = this.type;
     oscillator.frequency.value = frequency;
     oscillator.connect(this.node);
-    oscillator.start(0);
-    oscillator.stop(this.context.currentTime + (duration / 1000));
+    startMethod.call(oscillator, 0);
+    stopMethod.call(oscillator, this.context.currentTime + (duration / 1000));
   };
 
 });
