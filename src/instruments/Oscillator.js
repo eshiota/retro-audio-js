@@ -5,7 +5,7 @@
 Module("App.instruments.Oscillator", function (Oscillator) {
 
   Oscillator.fn.initialize = function (audioContext, node, type) {
-    this.type = type || 0;
+    this.type = type || "sine";
     this.context = audioContext;
     this.node = node;
   };
