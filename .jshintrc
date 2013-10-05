@@ -1,0 +1,24 @@
+{
+  "regexdash": true,
+  "browser": true,
+  "wsh": false,
+  "trailing": true,
+  "sub": true,
+  "laxcomma": true,
+  "laxbreak": true,
+  "eqeqeq": true,
+  "curly": true,
+  "boss": true,
+  "forin": true,
+  "newcap": false,
+  "noarg": true,
+  "quotmark": true,
+  "maxdepth": 2,
+  "devel": false,
+  "jquery": true,
+  "globals" : {
+    "Module" : true,
+    "Namespace" : true,
+    "SH" : true
+  }
+}
