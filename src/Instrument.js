@@ -4,7 +4,7 @@
 *  TODO: implement better strategy for different types of instruments
 *****************************************************************************/
 
-Module("App.Instrument", function (Instrument) {
+Module("Retro.Instrument", function (Instrument) {
 
   Instrument.fn.initialize = function (instrument, volume, audioContext) {
     this.context = audioContext;
@@ -21,11 +21,11 @@ Module("App.Instrument", function (Instrument) {
     this.masterVolume.connect(this.context.destination);
 
     if (instrument === "oscillator-sine") {
-      this.instrumentVariation = new App.instruments.Oscillator(this.context, this.masterVolume, "sine");
+      this.instrumentVariation = new Retro.instruments.Oscillator(this.context, this.masterVolume, "sine");
     }
 
     if (instrument === "oscillator-square") {
-      this.instrumentVariation = new App.instruments.Oscillator(this.context, this.masterVolume, "square");
+      this.instrumentVariation = new Retro.instruments.Oscillator(this.context, this.masterVolume, "square");
     }
   };
 

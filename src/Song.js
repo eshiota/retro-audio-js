@@ -2,7 +2,7 @@
 *  Song
 *****************************************************************************/
 
-Module("App.Song", function (Song) {
+Module("Retro.Song", function (Song) {
 
   Song.fn.initialize = function (song, audioContext) {
     var signature = song.time_signature.split("/");
@@ -19,7 +19,7 @@ Module("App.Song", function (Song) {
 
     // Loads all tracks from a song
     for (var i = 0, l = song.score.length; i < l; i++) {
-      this.tracks.push(new App.Track(song.score[i], audioContext));
+      this.tracks.push(new Retro.Track(song.score[i], audioContext));
     }
   };
 

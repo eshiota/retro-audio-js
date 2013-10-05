@@ -1,1 +1,1 @@
-var player = new App.Player();
+var player = new Retro.Player();

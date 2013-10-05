@@ -2,10 +2,10 @@
 *  Controls
 *****************************************************************************/
 
-Module("App.Controls", function (Controls) {
+Module("Retro.Controls", function (Controls) {
 
   // Turns Controls into an event emmiter
-  SH.extend(Controls.fn, App.Events);
+  SH.extend(Controls.fn, Retro.Events);
 
   Controls.fn.initialize = function () {
     this.element = document.querySelector("[data-player-controls]");

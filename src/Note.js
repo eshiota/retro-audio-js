@@ -2,7 +2,7 @@
 *  Note
 *****************************************************************************/
 
-Module("App.Note", function (Note) {
+Module("Retro.Note", function (Note) {
 
   Note.fn.initialize = function (notation) {
     this.isPause = false;

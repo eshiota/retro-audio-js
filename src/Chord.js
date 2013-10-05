@@ -2,11 +2,11 @@
 *  Chord
 *****************************************************************************/
 
-Module("App.Chord", function (Chord) {
+Module("Retro.Chord", function (Chord) {
 
   Chord.fn.initialize = function (notes) {
     this.notes = notes.map(function (value) {
-      return new App.Note(value);
+      return new Retro.Note(value);
     });
 
     this.value = this.getValue(this.notes);

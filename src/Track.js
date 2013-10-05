@@ -2,10 +2,10 @@
 *  Track
 *****************************************************************************/
 
-Module("App.Track", function (Track) {
+Module("Retro.Track", function (Track) {
 
   Track.fn.initialize = function (track, audioContext) {
-    this.instrument = new App.Instrument(track.instrument, track.volume, audioContext);
+    this.instrument = new Retro.Instrument(track.instrument, track.volume, audioContext);
     this.sheet = Track.parseTrack(track.sheet);
   };
 
@@ -59,10 +59,10 @@ Module("App.Track", function (Track) {
   // Parses a note/chord of a track
   Track.parseTrackElement = function (element) {
     if (Array.isArray(element)) {
-      return new App.Chord(element);
+      return new Retro.Chord(element);
     }
 
-    return new App.Note(element);
+    return new Retro.Note(element);
   };
 
   // Gets a note for a given cycle. If the cycle has no note,

@@ -2,14 +2,14 @@
 *  Player
 *****************************************************************************/
 
-Module("App.Player", function (Player) {
+Module("Retro.Player", function (Player) {
 
   Player.fn.initialize = function () {
     // Holds the universal audio context
     var AudioContext = window.AudioContext || window.webkitAudioContext;
     this.context = new AudioContext();
 
-    this.controls = new App.Controls();
+    this.controls = new Retro.Controls();
     this.isPlaying = false;
 
     this._registerInterests();
@@ -33,7 +33,7 @@ Module("App.Player", function (Player) {
   Player.fn.load = function (song) {
     if (this.song) { this.stop(); }
 
-    this.song = new App.Song(song, this.context);
+    this.song = new Retro.Song(song, this.context);
     this.controls.updateSongInfo(song.title);
   };
 

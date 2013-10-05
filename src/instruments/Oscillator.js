@@ -2,7 +2,7 @@
 *  Instrument - Oscillator
 *****************************************************************************/
 
-Module("App.instruments.Oscillator", function (Oscillator) {
+Module("Retro.instruments.Oscillator", function (Oscillator) {
 
   Oscillator.fn.initialize = function (audioContext, node, type) {
     this.type = Oscillator.getWaveType(type || "sine", audioContext);
